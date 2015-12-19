@@ -26,12 +26,18 @@ func parseArgs() {
 
 		if a > 0 {
 			port = ":" + c
+			if a == 0 {
+				dir = c
+			} else if b == 0 {
+				dir = d
+			}
 		} else if b > 0 {
 			port = ":" + d
-		} else if a == 0 {
-			dir = c
-		} else if b == 0 {
-			dir = d
+			if a == 0 {
+				dir = c
+			} else if b == 0 {
+				dir = d
+			}
 		}
 	} else if len(os.Args) == 2 {
 		c := os.Args[1]
