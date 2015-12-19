@@ -18,9 +18,9 @@ func webs(w http.ResponseWriter, r *http.Request) {
 }
 
 func parseArgs() {
-	c := os.Args[1]
-	d := os.Args[2]
-	if len(os.Args) > 1 {
+	if len(os.Args) > 2 {
+		c := os.Args[1]
+		d := os.Args[2]
 		a, _ := strconv.Atoi(c)
 		b, _ := strconv.Atoi(d)
 
@@ -33,7 +33,8 @@ func parseArgs() {
 		} else if b == 0 {
 			dir = d
 		}
-	} else if len(os.Args) == 1 {
+	} else if len(os.Args) == 2 {
+		c := os.Args[1]
 		a, _ := strconv.Atoi(c)
 		if a > 0 {
 			port = ":" + c
